@@ -21,6 +21,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{89D8A279
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain.UnitTests", "tests\Domain.UnitTests\Domain.UnitTests.csproj", "{1AAB3224-1850-4318-A869-2E44757972F0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api.FunctionalTests", "tests\Api.FunctionalTests\Api.FunctionalTests.csproj", "{CEC69FAC-7AD6-4EA2-A8C5-C6E7584E1480}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application.IntegrationTests", "tests\Application.IntegrationTests\Application.IntegrationTests.csproj", "{BBC2E51D-CF0F-42D4-AD47-289CEB9A1ECD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,8 @@ Global
 		{5FC45D4E-D8AF-437C-ABD0-94E8942005E0} = {2C282089-8550-403A-A77A-6295E09A8469}
 		{63F20DEB-335C-4797-9ACD-1190DBDA2659} = {2C282089-8550-403A-A77A-6295E09A8469}
 		{1AAB3224-1850-4318-A869-2E44757972F0} = {89D8A279-B01B-4B45-B283-F87AB72364FF}
+		{CEC69FAC-7AD6-4EA2-A8C5-C6E7584E1480} = {89D8A279-B01B-4B45-B283-F87AB72364FF}
+		{BBC2E51D-CF0F-42D4-AD47-289CEB9A1ECD} = {89D8A279-B01B-4B45-B283-F87AB72364FF}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{F28EB7DD-58C2-4D8F-8ECA-52C3F74D76C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -59,5 +65,13 @@ Global
 		{1AAB3224-1850-4318-A869-2E44757972F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1AAB3224-1850-4318-A869-2E44757972F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1AAB3224-1850-4318-A869-2E44757972F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CEC69FAC-7AD6-4EA2-A8C5-C6E7584E1480}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CEC69FAC-7AD6-4EA2-A8C5-C6E7584E1480}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CEC69FAC-7AD6-4EA2-A8C5-C6E7584E1480}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CEC69FAC-7AD6-4EA2-A8C5-C6E7584E1480}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BBC2E51D-CF0F-42D4-AD47-289CEB9A1ECD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BBC2E51D-CF0F-42D4-AD47-289CEB9A1ECD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BBC2E51D-CF0F-42D4-AD47-289CEB9A1ECD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BBC2E51D-CF0F-42D4-AD47-289CEB9A1ECD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

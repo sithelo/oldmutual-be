@@ -4,7 +4,7 @@ using Npgsql;
 
 namespace Infrastructure.Database;
 
-internal sealed class DbConnectionFactory(NpgsqlDataSource dataSource) : IDbConnectionFactory
+public sealed class DbConnectionFactory(NpgsqlDataSource dataSource) : IDbConnectionFactory
 {
     public IDbConnection GetOpenConnection()
     {
