@@ -1,6 +1,7 @@
-﻿services:
+﻿version: '3.4'
+services:
   web.api:
     image: web.api
     build:
       context: .
-      dockerfile: Web.Api/Dockerfile
+      dockerfile: src/Web.Api/Dockerfile
