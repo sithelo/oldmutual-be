@@ -10,7 +10,9 @@ public sealed class CreateCountryCommandHandler(
     IUnitOfWork unitOfWork) : ICommandHandler<CreateCountryCommand, Guid>
 {
     public async Task<Result<Guid>> Handle(
+#pragma warning disable CA1725
         CreateCountryCommand command,
+#pragma warning restore CA1725
         CancellationToken cancellationToken)
     {
         Result<Name> countryNameResult = Name.Create(command.Name);
