@@ -39,7 +39,7 @@ public static class DependencyInjection
         SqlMapper.AddTypeHandler(new DateOnlyTypeHandler());
 
         string? connectionString = configuration.GetConnectionString("Database");
-        // Ensure.NotNullOrEmpty(connectionString);
+        Ensure.NotNullOrEmpty(connectionString);
 
         services.AddSingleton<IDbConnectionFactory>(_ =>
             new DbConnectionFactory(new NpgsqlDataSourceBuilder(connectionString).Build()));
