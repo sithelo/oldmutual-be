@@ -1,6 +1,6 @@
 namespace Application.Countries.GetByName;
 
-public abstract class CountryDetails
+public class CountryDetails
 {
     public string Name { get; init; }
     public int Population { get; init; }

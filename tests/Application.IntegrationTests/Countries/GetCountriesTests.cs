@@ -28,7 +28,7 @@ public class GetCountriesTests : BaseIntegrationTest
     }
 
     [Fact]
-    public async Task Should_ReturnCustomer_WhenCountriesDoesNotExists()
+    public async Task Should_ReturnCountry_WhenCountriesDoesNotExists()
     {
         // Arrange
 

@@ -1,0 +1,20 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=2697129f_002D8e98_002D443b_002Db0b3_002D4993a27375af/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="Should_ReturnFailure_WhenCountryDoesNotExist" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;xUnit::BBC2E51D-CF0F-42D4-AD47-289CEB9A1ECD::net8.0::Application.IntegrationTests.Countries.GetCountriesTests.Should_ReturnFailure_WhenCountryDoesNotExist&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::BBC2E51D-CF0F-42D4-AD47-289CEB9A1ECD::net8.0::Application.IntegrationTests.Countries.GetCountriesTests.Should_ReturnCustomer_WhenCountriesDoesNotExists&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::CEC69FAC-7AD6-4EA2-A8C5-C6E7584E1480::net8.0::Api.FunctionalTests.Countries.GetCountryTests.Should_ReturnNotFound_WhenCountryDoesNotExist&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=a7dfcaec_002D85b6_002D4325_002Dbac4_002Df8fb3c2e206a/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="GetCountriesTests" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;xUnit::BBC2E51D-CF0F-42D4-AD47-289CEB9A1ECD::net8.0::Application.IntegrationTests.Countries.GetCountriesTests&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=f8ee5788_002D13d0_002D49d9_002Dba63_002D01eb24a76152/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="NameTests" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;xUnit::1AAB3224-1850-4318-A869-2E44757972F0::net8.0::Domain.UnitTests.Countries.CountryTests&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::CEC69FAC-7AD6-4EA2-A8C5-C6E7584E1480::net8.0::Api.FunctionalTests.Countries.GetCountryTests.Should_ReturnNotFound_WhenCountryDoesNotExist&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::BBC2E51D-CF0F-42D4-AD47-289CEB9A1ECD::net8.0::Application.IntegrationTests.Countries.GetCountriesTests.Should_ReturnFailure_WhenCountryDoesNotExist&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

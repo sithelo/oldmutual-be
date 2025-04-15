@@ -18,7 +18,7 @@ internal sealed class GetCountryByNameQueryHandler(IDbConnectionFactory factory)
                 u.id AS Id,
                 u.name AS Name,
                 u.flag AS Flag,
-                u.capital_city AS CapitalCity,
+                u.city AS City,
                 u.population AS Population
             FROM countries u
             WHERE u.Name = @Name
@@ -26,14 +26,26 @@ internal sealed class GetCountryByNameQueryHandler(IDbConnectionFactory factory)
 
         using IDbConnection connection = factory.GetOpenConnection();
 
-        CountryResponse? country = await connection.QueryFirstOrDefaultAsync<CountryResponse>(
-            sql,
-            query);
+        CountryResult? countryResult = await connection.QueryFirstOrDefaultAsync<CountryResult>(
+            sql, query);
 
-        if (country is null)
+        if (countryResult is null)
         {
             return Result.Failure<CountryResponse>(CountryErrors.NotFoundByName);
         }
+
+        var country = new CountryResponse
+        {
+            Id = countryResult.Id,
+            Name = countryResult.Name,
+            Flag = countryResult.Flag,
+            CountryDetails = new CountryDetails
+            {
+                Capital = countryResult.City,
+                Population = countryResult.Population,
+                Name = countryResult.Name,
+            }
+        };
 
         return country;
     }

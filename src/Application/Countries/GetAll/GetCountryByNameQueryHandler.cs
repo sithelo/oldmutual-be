@@ -16,9 +16,9 @@ internal sealed class GetAllCountriesQueryHandler(IDbConnectionFactory factory)
         const string sql =
             """
             SELECT
-                u.name AS Name,
-                u.flag AS Flag
-            FROM countries
+                c.name AS Name,
+                c.flag AS Flag
+            FROM countries c
             """;
 
         using IDbConnection connection = factory.GetOpenConnection();
