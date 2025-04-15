@@ -1,44 +1,63 @@
-var builder = WebApplication.CreateBuilder(args);
+using System.Reflection;
+using Application;
+using Asp.Versioning;
+using Asp.Versioning.Builder;
+using HealthChecks.UI.Client;
+using Infrastructure;
+using Microsoft.AspNetCore.Diagnostics.HealthChecks;
+using Serilog;
+using Web.Api.Extensions;
 
-// Add services to the container.
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
-var app = builder.Build();
+builder.Host.UseSerilog((context, loggerConfig) =>
+    loggerConfig.ReadFrom.Configuration(context.Configuration));
 
-// Configure the HTTP request pipeline.
+builder.Services
+    .AddApplication()
+    .AddPresentation()
+    .AddInfrastructure(builder.Configuration);
+
+builder.Services.AddEndpoints(Assembly.GetExecutingAssembly());
+
+WebApplication app = builder.Build();
+
+ApiVersionSet apiVersionSet = app.NewApiVersionSet()
+    .HasApiVersion(new ApiVersion(1))
+    .ReportApiVersions()
+    .Build();
+
+RouteGroupBuilder versionedGroup = app
+    .MapGroup("api/v{version:apiVersion}")
+    .WithApiVersionSet(apiVersionSet);
+
+app.MapEndpoints(versionedGroup);
+
 if (app.Environment.IsDevelopment())
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
+    app.UseSwaggerWithUi();
+
+    app.ApplyMigrations();
 }
 
 app.UseHttpsRedirection();
 
-var summaries = new[]
+app.MapHealthChecks("health", new HealthCheckOptions
 {
-    "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-};
+    ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
+});
 
-app.MapGet("/weatherforecast", () =>
-    {
-        var forecast = Enumerable.Range(1, 5).Select(index =>
-                new WeatherForecast
-                (
-                    DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-                    Random.Shared.Next(-20, 55),
-                    summaries[Random.Shared.Next(summaries.Length)]
-                ))
-            .ToArray();
-        return forecast;
-    })
-    .WithName("GetWeatherForecast")
-    .WithOpenApi();
+app.UseRequestContextLogging();
 
-app.Run();
+app.UseSerilogRequestLogging();
 
-record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
-{
-    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
-}
+app.UseExceptionHandler();
+
+
+// REMARK: If you want to use Controllers, you'll need this.
+app.MapControllers();
+
+await app.RunAsync();
+
+// REMARK: Required for functional and integration tests to work.
+public partial class Program;
