@@ -391,3 +391,6 @@ dotnet_diagnostic.CA1515.severity = none
 
 [*.{cs,vb}]
 dotnet_diagnostic.CA5394.severity = none
+
+[*.{cs,vb}]
+dotnet_diagnostic.CA1725.severity = none
