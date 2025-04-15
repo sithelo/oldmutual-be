@@ -1,6 +1,6 @@
 # API retrieve a list of countries
 
-
+- Backend build using .NET 8.
 - SharedKernel project with common Domain-Driven Design abstractions.
 - Domain layer with a Country entity.
 - Application layer with abstractions for:
